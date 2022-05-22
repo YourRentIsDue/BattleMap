@@ -1,0 +1,50 @@
+body {
+    background-image:url(/images/map.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+.vignette{
+    height: 100%;
+    width: 100%;
+    background-image:radial-gradient(transparent, black 90%);
+    position: absolute;
+    z-index: -1;
+}
+
+.form-container {
+    display: grid;
+    place-items: center;
+    height: 80%;
+}
+
+.form-container a {
+    color: var(--silk)
+}
+
+.form {
+    background:var(--theme);
+    border: 2px black solid;
+    border-radius: 7px;
+    color: #fff;
+    padding: 1.5rem;
+}
+
+.form h2 {
+    margin: 0;
+}
+
+.form h3 {
+    margin: 1em 0 .2em;
+}
+
+section {
+    margin-bottom: .5em;
+}
+
+.button-holder {
+    display: flex;
+    justify-content: flex-end;
+}

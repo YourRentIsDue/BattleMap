@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <%- include('./partials/head') %>
+        <title>BattleMap</title>
+        <link rel="stylesheet" href="/styles/profile.css">
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+        <main class="profile">
+            <% if(locals.profile){ %>
+            <header class="profile-header">
+                <div class="half">
+                    <img class="profile-picture" src="/pfp/default.png">
+                    <div class="profile-info">
+                        <p class="profile-username"><b><%= profile.username %></b></p>
+                        <p class="profile-user-title"><i><%= profile.epithet %></i></p>
+                    </div>
+                </div>
+                <a href="/profile/edit" class="button edit-profile">Edit profile</a>
+            </header>
+            <section class="profile-favourite-battles">
+                <h2>Favourite Battles</h2>
+                <div class="profile-battles-list">
+                    <% profile.fave_battles.forEach(battle => { %>
+                        <a class="battle" href="<%= battle.article %>"><%= battle.name %></a>
+                    <% }); %>
+                </div>
+            </section>
+            <section class="profile-comments">
+                <h2>Comments</h2>
+                <% if(locals.session && session.isLoggedIn){ %>
+                <form class="profile-comments-form" action="/profile/add-comment" method="POST">
+                    <textarea name="content" placeholder="Add a comment" required maxlength="500"></textarea>
+                    <input type="hidden" name="profile" value="<%= profile.username %>">
+                    <input type="hidden" name="author" value="<%= session.username %>">
+                    <div class="button-holder">
+                        <button>Post Comment</button>
+                    </div>
+                </form>
+                <% } %>
+                <% if(locals.comments){ %>
+                <ul class="profile-comments-list">
+                    <% for(const c of comments){ %>
+                    <li class="comment">
+                        <a class="comment-profile-link" href="/profile/<%= c.author %>">
+                            <img class="comment-pfp" src="/pfp/<%= c.author %>.png">
+                        </a>
+                        <div class="comment-info">
+                            <span>
+                                <a href="/profile/<%= c.author %>" class="author"><%= c.author %></a>
+                                &bull;
+                                <time><%= new Date(c.date).toLocaleString('default', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) %></time>
+                            </span>
+                            <p class="text"><%= c.content %></p>
+                        </div>
+                    </li>
+                    <% } %>
+                </ul>
+                <% } %>
+            </section>
+            <% } else{ %>
+            <header class="profile-header">
+                <img class="profile-picture" src="https://bulma.io/images/placeholders/128x128.png">
+                <div class="profile-info">
+                    <p class="profile-username">User not found</p>
+                </div>
+            </header>
+            <% } %>
+        </main>
+    </body>
+</html>

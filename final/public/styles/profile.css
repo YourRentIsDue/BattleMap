@@ -1,0 +1,142 @@
+.profile {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
+
+.profile h2 {
+    color: var(--theme-darker);
+    font-weight: bold;
+    margin: 2em 0 1em;
+}
+
+.profile h3 {
+    margin: 0;
+    margin-bottom: .25rem;
+}
+
+.profile-header {
+    align-items: center;
+    background-color: var(--theme-darker);
+    background-image: linear-gradient(to top right, var(--theme-darker), var(--theme-lighter));
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    height: 10rem;
+    padding: 0 2rem;
+}
+
+.half {
+    align-items: center;
+    display: flex;
+}
+
+.profile-picture {
+    border: 2px solid var(--silk);
+    border-radius: 50%;
+    height: 128px;
+    margin-right: 2rem;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    width: 128px;
+}
+
+.profile-info {
+    padding: .5rem;
+}
+
+.profile-info p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.profile-username {
+    font-weight: bold;
+}
+
+.profile-user-title {
+    color: #e6e6e6;
+}
+
+.profile section {
+    color: black;
+}
+
+.profile-battles-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    grid-template-rows: min-content;
+    gap: 2.75rem 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.battle {
+    background-color: #e6e6e6;
+    border: 1px solid #ccc;
+    padding: 1rem 0;
+    position: relative;
+    text-align: center;
+}
+
+.battle:hover {
+    text-decoration: none;
+}
+
+.profile-comments-form textarea {
+    font: inherit;
+    padding: .5rem;
+    resize: vertical;
+    min-height: 58px;
+    max-height: 96px;
+    width: 100%;
+}
+
+.profile-comments-form textarea::placeholder {
+    font-style: italic;
+}
+
+.profile-comments-form .button-holder {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-comments-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    margin-bottom: 1rem;
+}
+
+.comment-profile-link {
+    display: block;
+}
+
+.comment-pfp {
+    border-radius: 50%;
+    height: 48px;
+    object-fit: cover;
+    width: 48px;
+}
+
+.comment-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.comment-info .author {
+    color: var(--theme-lighter);
+    font-weight: bold;
+}
+
+.comment-info .text {
+    color: #7a7a7a;
+    margin: 0;
+}

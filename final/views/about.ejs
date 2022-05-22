@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <%- include('./partials/head') %>
+        <title>BattleMap - About</title>
+        <link rel="stylesheet" href="/styles/about.css">
+        
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+        <main class="about">    
+
+            <h1>About Us</h1>
+            <p>We are Battle Map, an interactive map displaying historical battles across Europe.</p>
+            <h2>How Does BattleMap Work?</h2>
+            <p>You can search either by place or battle name. You can also sign up and login to an account and leave comments on others accounts.</p>
+
+            <h2>In order to search via place name:</h2>
+            <section>
+                <p>Click the tab to search via place name and then enter the name of the place you want to search. You can also specify the radius size as to which battles will appear in.</p>
+                <img src="/images/about/about-1.png" alt="Search Place Screenshot">
+                <img src="/images/about/about-2.png" alt="Search Place Results screenshot">
+                <p>BattleMap will then show the area searched for, along with pins showing where each battle took place</p>            
+                <p>You can then click on a pin to be shown an article about that battle</p>
+                <img src="/images/about/about-3.png" alt="Pin clicked screenshot">
+            </section>
+
+            <h2>In order to search via battle name:</h2>
+            <section>
+                <img src="/images/about/about-4.png" alt="Search Battle Screenshot">
+                <p>Click the tab to search via battle name and then enter the name of the battle you want to search.<br><br>Like before, you can click on the pin to be shown the article about the selected battle</p>
+                <p>Battlemap will then show a pin of the battle that you searched for.</p>
+                <img src="/images/about/about-5.png" alt="Search battle results screenshot">
+            </section>
+
+            <h2>Missing battles?</h2>
+            <section>
+                <p>If you've found a missing battle, log into your account and access the form <a href="/missed-battle">here</a> or click "missing battles" to submit an addition.</p>
+                <img src="images/about/about-6.png" alt="Missing battles form screenshot">
+            </section>
+ 
+            <aside>
+                <h2>Features</h2>
+                <ul>
+                    <li>Interactive Map</li>
+                    <li>User Profiles, can create an account to save battles and comment on other users</li>
+                    <li>Map grabs articles of the selected battle from wikipedia</li>
+                </ul>
+                <h2>Disclaimer</h2>
+                <p>The battles on our database are sourced from Wikipedia. We have only selected battles which have been cited and verified. Furthermore we list Irish battles from 16th Century onwards, due to a considerable scarcity of citations for the battles 15c. and before.</p>
+            </aside>
+        </main>
+    </body>
+</html>

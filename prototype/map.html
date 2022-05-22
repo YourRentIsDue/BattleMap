@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- End of meta tags -->
+
+        <!-- Title and Icon -->
+        <title>BattleMap</title>
+        <link rel="icon" href = "./public/images/favicon.png">
+
+        <!-- Stylesheets -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./public/main.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    </head>
+    <body>
+        
+        <!-- Layer containing the menus and UI -->
+        <div class="map-interactive-layer" id="ui">
+
+            <!-- Group logo -->
+            <img class="logo faded" src="./public/images/logo.png" height="64">
+
+            <!-- Country title box -->
+            <div class="map-country">
+                <div class="box" id="country-name">None hovered.</div>
+            </div>
+
+            <!-- Article Preview Box (hidden initially) -->
+            <div class="map-article-preview">
+                <div class="box box--article" id="article-preview">
+                    <div onclick="closePopup()" class="article-close">X</div>
+                    <header class="article-header">
+                        <div>
+                            <h2 id="article-title" class="box-title"></h2>
+                        </div>
+                        <div id="article-image" class="article-image"></div>
+                    </header>
+                    <div class="article-body">
+                        <div id="article-content"></div>
+                        <p><a id="article-link" class="link" href="https://en.wikipedia.org/wiki/Battle_of_Berlin" target="_blank">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toggle Theme Box -->
+            <div class = "map-theme-toggle">
+                <button onclick="toggleTheme()" class="button interactable light" id="theme-button"><br></button>
+            </div>
+
+            <!-- Menu Box -->
+            <div class="map-menu" id="map-menu">
+                <div class="box box--menu interactable">
+                    <h2 class="box-title">Menu</h2>
+
+                    <!-- Form -->
+                    <form id="search-box" class="search-form">
+                        <div id="advanced-search" class="box box--advanced hidden">
+                            <label><input class="checkbox " type="checkbox" name="earlier">Earlier than</label>
+                            <input class="search-bar" type="number" name="year" placeholder="Year" autocomplete="off">
+                        </div>
+                        <input name="place" class="search-bar" placeholder="Search" autocomplete="off">
+                        <label><input class="checkbox" type="checkbox" name="hascountry"> Include whole country</label>
+                        <div class="button-holder small">
+                            <button type="submit" class="button button--small search-button">Plot</button>
+                            <button type="button" id="open-advanced-search" class="button button--small search-button">Advanced Search</button>
+                        </div>
+                    </form>
+                    <!-- End form -->
+
+                    <div id="search-output"></div>
+                </div>
+            </div>
+
+            <!-- Favourite battles box -->
+            <div class="map-favourite-battles">
+                <div class="box interactable">
+                    <h3 class="box-title">Saved Battles</h3>
+                    <div id="saved-battles" class="search-results empty">
+                        <div class="message">Click pins on the map to save battles.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Map created by leaflet.js -->
+        <div id="battlemap"></div>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+        <script src="./public/scripts/init.js"></script>
+        <script src="./public/scripts/map.js"></script>
+        <script src="./public/scripts/search.js"></script>
+        <script src="./public/scripts/popup.js"></script>
+        <script src="./public/scripts/form.js"></script>
+    </body>
+</html>

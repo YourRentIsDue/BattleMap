@@ -1,0 +1,27 @@
+.about{
+    overflow: auto;
+    color: black;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.about section{
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+    align-items: center;
+}
+
+.about h2{
+    margin-top: 4rem;
+}
+
+section img{
+    max-width: 100%;
+}
+
+
+.about a {
+    color: var(--theme-link);
+}

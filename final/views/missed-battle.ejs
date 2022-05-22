@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <%- include('./partials/head') %>
+        <title>Battle submission</title>
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+        <main class="wrap">
+            <h1>Missed Battle</h1>
+            <p>Think we missed a battle? Use the form below to make a new entry to the database!</p>
+            <form id="battle-submit-form" action="" method="post" autocomplete="off" spellcheck="false">
+                <div class="split">
+                    <div>
+                        <section>
+                            <h3><label for="name" class="label">Name</label></h3>
+                            <input type="text" id="name" name="name" placeholder="Battle of Berlin*" required>
+                            <p><small>* siege, ambush, assault, etc. all count too</small></p>
+                        </section>
+                        <section>
+                            <h3><label for="article" class="label">Article URL</label></h3>
+                            <input type="url" id="article" name="article" placeholder="https://en.wikipedia.com/wiki/Battle_of_Berlin" size="35" required>
+                        </section>
+                        <section>
+                            <h3><label for="year" class="label">Year</label></h3>
+                            <input type="number" id="year" name="year" placeholder="1945" min="0" max="2021" required>
+                        </section>
+                        <section>
+                            <h3>Coords</h3>
+                            <input type="number" id="lat" name="lat" placeholder="latitude" required>
+                            <input type="number" id="lng" name="lng" placeholder="longitude" required>
+                        </section>
+                    </div>
+                    <div>
+                        <section>
+                            <h3><label for="place" class="label">Place</label></h3>
+                            <input type="text" id="place" name="place" placeholder="Berlin" required>
+                        </section>
+                        <section>
+                            <h3><label for="country" class="label">Country</label></h3>
+                            <input type="text" id="country" name="country" placeholder="Germany" required>
+                        </section>
+                        <section>
+                            <h3><label for="war" class="label">War or Campaign</label></h3>
+                            <input type="text" id="war" name="war" placeholder="World War II" required>
+                            <p><small>Preferrably identify the war this battle happened during.</small></p>
+                        </section>
+                    </div>
+                </div>
+                <div class="button-holder">
+                    <button class="button">Submit</button>
+                    <button type="reset" class="button">Reset</button>
+                </div>
+                <div id="output"></div>
+            </form>
+        </main>
+        <%- include('./partials/common-scripts') %>
+        <script src="/scripts/missed-battle.js"></script>
+    </body>
+</html>

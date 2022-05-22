@@ -1,0 +1,46 @@
+<%
+var isLogged = false;
+if(locals.session && session.isLoggedIn){
+    isLogged = true;
+}
+%>
+<% if(locals.isfloat){ %>
+    <header class="navbar float">
+<% } else { %>
+    <header class="navbar">
+<% } %>
+    <div class="navbar-container">
+        <a class="navbar-logo" href="/">
+            <img src="/images/logo.png" alt="BattleMap" height="38">
+        </a>
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/about">About</a></li>
+                <% if(isLogged){ %>
+                <li><a href="/missed-battle">Missed Battle</a></li>
+                <% } %>
+            </ul>
+
+            <div class="navbar-user-search">
+                <form class="user-search-form" autocomplete="off" spellcheck="false">
+                    <input type="text" placeholder="🔍 Search for User" id="user-search">
+                    <div id="user-search-results" class="user-search-results"></div>
+                </form>
+            </div>
+
+            <ul>
+                <% if(isLogged){ %>
+                <li><i>Ahoy, <a href="/profile/me"><%= session.username %></a></i></li>
+                <li>&bull;</li>
+                <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</header>
+<script src="/scripts/user-search.js"></script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <%- include('./partials/head') %>
+        <title>BattleMap - Sign Up</title>
+        <link rel="stylesheet" href="/styles/form.css">
+    </head>
+    <body>
+        <div class="vignette"></div>
+        <%- include("./partials/navbar.ejs") %>
+        <main class="wrap form-container">
+            <form id="signup-form" class="form" autocomplete="off" spellcheck="false" method="post">
+                <h2>Registration</h2>
+                <section class="split">
+                    <div>
+                        <h3><label for="username" class="label">Username</label></h3>
+                        <input type="text" id="username" name="username" placeholder="maximum 32 chars" maxlength="32" autofocus required>
+                    </div>
+                    <div>
+                        <h3><label for="password" class="label">Password</label></h3>
+                        <input type="password" id="password" name="password" placeholder="minimum 8-digit" minlength="8" required>
+                    </div>
+                </section>
+                <section class="split">
+                    <p>Have an account? <a href="/login">Login</a></p>
+                    <div class="button-holder">
+                        <button class="button">Sign up</button>
+                    </div>
+                </section>
+                <p><output id="output"></output></p>
+            </form>           
+        </main>
+        <%- include('./partials/common-scripts') %>
+        <script src="/scripts/signup.js"></script>
+    </body>
+</html>

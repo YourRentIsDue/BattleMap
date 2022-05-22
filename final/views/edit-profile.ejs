@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <%- include('./partials/head') %>
+        <title>BattleMap</title>
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+        <main class="wrap">
+            <h1>Edit Profile</h1>
+            <form id="edit-profile-form" action="" method="post">
+                <section>
+                    <h3><label for="epithet" class="label">Change epithet</label></h3>
+                    <input type="text" id="epithet" name="epithet" value="<%= profile.epithet %>" placeholder="epithet (nickname)">
+                </section>
+                <p><button class="button">Save</button></p>
+            </form>
+            <div id="output"></div>
+        </main>
+        <%- include('./partials/common-scripts') %>
+        <script src="/scripts/edit-profile.js"></script>
+    </body>
+</html>
